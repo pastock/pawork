@@ -7,6 +7,8 @@ use Illuminate\Console\Command;
 use Illuminate\Support\Str;
 use MilesChou\Codegener\Traits\Path;
 
+use Pastock\Pawork\Database;
+
 use function collect;
 use function mb_convert_encoding;
 use function mb_detect_encoding;
@@ -82,6 +84,9 @@ EOF;
 
                 return $v[0];
             })
+            ->merge(Database::all())
+            ->unique()
+            ->sort()
             ->values();
 
         $this->generateCode($data->toArray());
