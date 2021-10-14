@@ -1,0 +1,17 @@
+#!/usr/bin/env php
+<?php
+
+use App\Commands\Update;
+use Illuminate\Console\Application;
+use Illuminate\Container\Container;
+use Illuminate\Events\Dispatcher;
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+$app = new Application(new Container(), new Dispatcher(), 'Working day tools');
+
+$app->addCommands([
+    new Update(),
+]);
+
+$app->run();
