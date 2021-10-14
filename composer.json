@@ -1,11 +1,8 @@
 {
-    "name": "mileschou/composer-template",
-    "description": "The template for create Composer project",
+    "name": "pastock/pawork",
+    "description": "Working day finder for PHP",
     "type": "library",
     "license": "MIT",
-    "keywords": [
-        "template"
-    ],
     "authors": [
         {
             "name": "MilesChou",
@@ -22,7 +19,7 @@
     },
     "autoload": {
         "psr-4": {
-            "MilesChou\\Template\\": "src"
+            "Pastock\\": "src"
         }
     },
     "autoload-dev": {
