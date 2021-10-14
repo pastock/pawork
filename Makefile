@@ -19,5 +19,8 @@ check:
 test: clean check
 	phpdbg -qrr vendor/bin/phpunit --testdox
 
+bench:
+	php vendor/bin/phpbench run tests/Benchmark --report=default
+
 coverage: test
 	@if [ "`uname`" = "Darwin" ]; then open build/coverage/index.html; fi
